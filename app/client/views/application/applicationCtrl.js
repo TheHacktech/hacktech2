@@ -16,11 +16,11 @@ angular.module('reg')
       // Set up the user
       $scope.user = currentUser.data;
 
-      // Is the student from MIT?
-      $scope.isMitStudent = $scope.user.email.split('@')[1] == 'caltech.edu';
+      // Is the student from Caltech?
+      $scope.isCaltechStudent = $scope.user.email.split('@')[1] == 'caltech.edu';
 
       // If so, default them to adult: true
-      if ($scope.isMitStudent){
+      if ($scope.isCaltechStudent){
         $scope.user.profile.adult = true;
       }
 
@@ -149,7 +149,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'allowMinors',
-                  prompt: 'You must be an adult, or an MIT student.'
+                  prompt: 'You must be an adult, or an Caltech student.'
                 }
               ]
             }
